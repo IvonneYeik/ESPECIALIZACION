@@ -218,6 +218,41 @@ Herramienta visual y gratuita, enfocada en exploración de datos y docencia. Sus
 
 ---
 
+### 🛠️ **Solución Implementada con Orange**  
+#### 1. **Integración y Visualización de Datos**  
+- **Fuentes**:  
+  - **CRM**: 200,000 registros de clientes (edad, ingresos, productos contratados).  
+  - **SAP**: Historial de pagos últimos 3 años.  
+  - **Excel**: Variables macroeconómicas (desempleo regional, inflación).  
+- **Flujo en Orange**:  
+  - Widget `File` para cargar datos desde CSV y Excel.  
+  - Widget `Merge Data` para unir tablas por ID de cliente.  
+  - Widget `Correlation Matrix` para identificar relaciones clave (ej.: ingresos vs. morosidad).  
+
+#### 2. **Segmentación con Machine Learning**  
+- **Técnicas**:  
+  - **Clustering (k-means)**: Agrupó clientes en 5 perfiles de riesgo.  
+  - **Clasificación (Random Forest)**: Predijo morosidad con 89% de precisión (AUC: 0.91).  
+
+#### 3. **Visualización Interactiva**  
+- **Herramientas**:  
+  - Widget `Scatter Plot`: Correlación entre edad y morosidad.  
+  - Widget `Box Plot`: Comparación de ingresos por segmento.  
+
+---
+
+### 📊 **Resultados Clave**  
+| **Métrica**                | **Antes de Orange** | **Después de Orange** |  
+|----------------------------|---------------------|-----------------------|  
+| Tasa de morosidad          | 8.5%               | 6.1% (-28%)           |  
+| Clientes de alto riesgo identificados | 62%       | 89%                   |  
+| Tiempo de análisis por cliente | 3 horas       | 20 minutos (-89%)     |  
+
+**Impacto adicional**:  
+- Reducción del 18% en fuga de clientes.  
+- Ahorro anual de **$2.7M**.  
+---
+
 ## RapidMiner  
 ### Descripción General  
 Destaca por su AutoML y usabilidad intuitiva, ideal para automatizar procesos como análisis de clientes o predicción de ventas. Sin embargo, su costo en licencias puede ser elevado para PYMES. Es una opción sólida para empresas con presupuesto que priorizan la velocidad en modelado sin programación
