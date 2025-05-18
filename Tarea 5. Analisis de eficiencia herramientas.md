@@ -41,6 +41,18 @@ Herramienta académica por excelencia, gratuita y sencilla para principiantes en
 | Universidades/Consultoras  | Series temporales        | - Predicción de volatilidad bursátil con modelo ARIMA.<br>- Limitación: Escalabilidad reducida. |  
 
 ---
+### Casos de Exito
+
+| **Empresa/Organización**              | **Sector**          | **Tipo de Analítica**               | **Caso de Éxito**                                                                 |
+|---------------------------------------|---------------------|-------------------------------------|-----------------------------------------------------------------------------------|
+| **University of Waikato (Nueva Zelanda)** | Educación          | Minería de datos educativos        | Implementaron modelos de clasificación en Weka para predecir el rendimiento académico de estudiantes, identificando factores clave como asistencia y participación en foros. Resultado: Mejora del 15% en tasas de retención. |
+| **New Zealand Ministry for Primary Industries** | Agricultura     | Detección de enfermedades en cultivos | Usaron Weka para analizar imágenes satelitales y datos de sensores, aplicando algoritmos de clustering (k-means) y redes neuronales para detectar enfermedades en plantaciones de kiwis. Redujeron pérdidas en un 25%. |
+| **Telecom Company (East Africa)**     | Telecomunicaciones  | Predicción de abandono de clientes (churn) | Con Weka, desarrollaron un modelo de regresión logística para predecir clientes en riesgo de churn usando datos de consumo y atención al cliente. Lograron aumentar la retención en un 20%. [Fuente: Estudio publicado en *IJCSI*, 2017] |
+| **European Retail Bank**              | Finanzas            | Detección de fraude                 | Implementaron un sistema de detección de transacciones fraudulentas con Weka usando SVM y Random Forest. Redujeron falsos positivos en un 30% y mejoraron la precisión al 92%. [Fuente: Caso de estudio en *Springer*, 2019] |
+| **Hospital Universitario de Canarias (España)** | Salud       | Diagnóstico médico                  | Utilizaron Weka para clasificar pacientes con riesgo de diabetes tipo II mediante árboles de decisión (J48), logrando un 89% de precisión en la detección temprana. [Fuente: Investigación publicada en *Journal of Medical Systems*, 2016] |
+
+
+---
 
 ## KNIME  
 ### Descripción General  
