@@ -186,25 +186,6 @@ Commerzbank, uno de los mayores bancos de Alemania, enfrentaba desafíos en su s
 
 ---
 
-### 🧠 **Lecciones Aprendidas**  
-1. **Integración multiplataforma**: KNIME permitió unificar SAP, Excel y CRM sin costosos desarrollos.  
-2. **Interpretabilidad**: Los árboles de XGBoost fueron clave para justificar decisiones ante reguladores.  
-3. **Colaboración**: Equipos de TI, riesgo y atención al cliente trabajaron en flujos compartidos de KNIME.  
-
----
-
-### 🔄 **Flujo de Trabajo en KNIME**  
-```mermaid
-graph TD
-A[Datos SAP] --> B{Preprocesamiento en KNIME}
-C[Datos Excel] --> B
-D[Datos CRM] --> B
-B --> E[Feature Engineering]
-E --> F[Modelado: XGBoost]
-F --> G[Despliegue en SAP vía PMML]
-G --> H[Monitoreo y Reentrenamiento]
----
-
 ## Orange  
 ### Descripción General  
 Herramienta visual y gratuita, enfocada en exploración de datos y docencia. Sus widgets interactivos simplifican tareas como clustering o visualización, pero carece de capacidad para modelos avanzados o datos masivos. Recomendada para educación, análisis preliminares o PYMES sin requerimientos técnicos complejos.
