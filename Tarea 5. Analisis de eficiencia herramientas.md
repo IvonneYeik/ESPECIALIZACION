@@ -13,15 +13,12 @@
 
 ## WEKA  
 ### Descripción General  
-Herramienta académica por excelencia, gratuita y sencilla para principiantes en minería de datos:  
-- Ofrece algoritmos clásicos de ML (*clasificación*, *clustering*).  
-- **Limitaciones**:  
-  - Sin soporte para *Big Data* o *deep learning*.  
-  - Ideal para prototipado rápido en educación o proyectos pequeños.  
+Herramienta académica por excelencia, gratuita y sencilla para principiantes en minería de datos. Ofrece algoritmos clásicos de ML (clasificación, clustering) pero carece de soporte para Big Data o deep learning. Perfecta para prototipado rápido en educación o proyectos pequeños, pero limitada en entornos industriales 
 
 ---
+### Fortalezas  y Limitaciones
 
-### Fortalezas  
+- **Fortalezas**:  
 1. **Algoritmos clásicos de ML**:  
    - Amplia biblioteca (*clasificación*, *regresión*, *asociación*).  
 2. **Entorno académico**:  
@@ -30,6 +27,11 @@ Herramienta académica por excelencia, gratuita y sencilla para principiantes en
    - Interfaz gráfica (GUI) para comparar modelos sin programar.  
 4. **Extensibilidad**:  
    - Plugins como *WEKA Deeplearning4j* para funcionalidades avanzadas.  
+
+- **Limitaciones**:  
+  - Sin soporte para *Big Data* o *deep learning*.  
+  - Flujos de trabajo complejos pueden volverse engorrosos
+
 
 ---
 
