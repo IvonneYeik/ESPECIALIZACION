@@ -42,10 +42,10 @@ Herramienta académica por excelencia, gratuita y sencilla para principiantes en
 | **Hospital Universitario de Canarias (España)** | Salud       | Diagnóstico médico                  | Utilizaron Weka para clasificar pacientes con riesgo de diabetes tipo II mediante árboles de decisión (J48), logrando un 89% de precisión en la detección temprana. [Fuente: Investigación publicada en *Journal of Medical Systems*, 2016] |
 
 ---
-# 🏦 **Caso de Éxito: European Retail Bank**  
-## **Detección de Fraude con Weka**
+### 🏦 **Caso de Éxito: European Retail Bank**  
+#### **Detección de Fraude con Weka**
 
-### **Contexto del Problema**  
+##### **Contexto del Problema**  
 La entidad bancaria enfrentaba un aumento del **fraude en transacciones con tarjetas de crédito** (especialmente en compras online y operaciones transfronterizas). Los sistemas tradicionales basados en reglas estáticas generaban:  
 - **Altos falsos positivos** (30% de transacciones legítimas bloqueadas innecesariamente).  
 - **Detección tardía** (el 40% de los fraudes se identificaban después de ocurridos).  
@@ -53,8 +53,8 @@ La entidad bancaria enfrentaba un aumento del **fraude en transacciones con tarj
 
 ---
 
-### **Solución Implementada con Weka**  
-#### 1. **Recopilación y Preprocesamiento de Datos**  
+##### **Solución Implementada con Weka**  
+###### 1. **Recopilación y Preprocesamiento de Datos**  
 - **Fuentes de datos**:  
   - Historial de transacciones (6 meses, 2.5 millones de registros).  
   - Variables: Monto, ubicación geográfica, dispositivo usado, hora, frecuencia de compra.  
@@ -64,7 +64,7 @@ La entidad bancaria enfrentaba un aumento del **fraude en transacciones con tarj
   - Codificación de variables categóricas (ej.: tipo de comercio).  
   - Balanceo de clases con el filtro **SMOTE** (Synthetic Minority Over-sampling Technique).
 
-#### 2. **Selección y Entrenamiento de Modelos**  
+###### 2. **Selección y Entrenamiento de Modelos**  
 - **Algoritmos probados**:  
   - **SVM (Máquinas de Vectores de Soporte)**: Para separar transacciones legítimas y fraudulentas en espacios de alta dimensión.  
   - **Random Forest**: Para capturar relaciones no lineales y reducir sobreajuste.  
@@ -72,7 +72,7 @@ La entidad bancaria enfrentaba un aumento del **fraude en transacciones con tarj
   - **10-fold cross-validation** en Weka.  
   - Métricas clave: Precisión, Recall, F1-Score.  
 
-#### 3. **Resultados del Modelo**  
+###### 3. **Resultados del Modelo**  
 | **Modelo**      | **Precisión** | **Recall** | **F1-Score** |  
 |-----------------|---------------|------------|--------------|  
 | **SVM**         | 89%           | 82%        | 85%          |  
@@ -80,7 +80,7 @@ La entidad bancaria enfrentaba un aumento del **fraude en transacciones con tarj
 
 - **Modelo Final**: Ensemble híbrido (SVM + Random Forest) con votación mayoritaria.  
 
-#### 4. **Integración en Producción**  
+###### 4. **Integración en Producción**  
 - **Despliegue**:  
   - Exportación del modelo entrenado en Weka a formato **PMML** (Predictive Model Markup Language).  
   - Integración con sistemas core del banco mediante APIs REST.  
@@ -90,7 +90,7 @@ La entidad bancaria enfrentaba un aumento del **fraude en transacciones con tarj
 
 ---
 
-### **Impacto y Beneficios**  
+##### **Impacto y Beneficios**  
 - **Reducción del 30% en falsos positivos**: Menos bloqueos injustificados → Mejora en satisfacción del cliente (NPS aumentó 15 puntos).  
 - **Detección en tiempo real**: El 95% de fraudes identificados en menos de 2 segundos.  
 - **Ahorro anual estimado**: €4.2 millones (por prevención de fraudes y reducción de costos operativos).  
@@ -218,6 +218,9 @@ Herramienta visual y gratuita, enfocada en exploración de datos y docencia. Sus
 
 ---
 
+
+
+--------------
 ### 🛠️ **Solución Implementada con Orange**  
 #### 1. **Integración y Visualización de Datos**  
 - **Fuentes**:  
