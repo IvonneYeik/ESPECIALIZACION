@@ -18,13 +18,13 @@ Herramienta académica por excelencia, gratuita y sencilla para principiantes en
 ---
 ### Fortalezas  y Limitaciones
 
-#### Fortalezas**:  
+#### Fortalezas:  
    - **Algoritmos clásicos de ML**: Ofrece una amplia biblioteca de algoritmos listos para usar (clasificación, regresión, clustering, asociación 
    - **Entorno académico:** Es la herramienta preferida para enseñar conceptos de aprendizaje automático por su simplicidad y enfoque educativo.
    - **Experimentación rápida:** Permite probar y comparar modelos sin necesidad de programar (interfaz GUI).
    - **Extensibilidad:** Puedes añadir plugins para ampliar funcionalidades (ej: Deep Learning con WEKA Deeplearning4j).
    
-#### Limitaciones**:  
+#### Limitaciones:  
   - Sin soporte para *Big Data* o *deep learning*.  
   - Flujos de trabajo complejos pueden volverse engorrosos
 
