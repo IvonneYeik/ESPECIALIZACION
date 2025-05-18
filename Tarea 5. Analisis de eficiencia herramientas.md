@@ -116,6 +116,9 @@ Herramienta académica por excelencia, gratuita y sencilla para principiantes en
 -   Curva de aprendizaje para flujos complejos.
 -   Requiere más recursos computacionales.
 
+
+### Casos de Exito
+
 | **Empresa/Organización**             | **Sector**          | **Tipo de Analítica**                | **Caso de Éxito**                                                                 |
 |--------------------------------------|---------------------|--------------------------------------|-----------------------------------------------------------------------------------|
 | **Roche (Farmacéutica)**             | Salud               | Descubrimiento de biomarcadores      | Automatización de análisis genómicos con KNIME, reduciendo tiempo de investigación en 50%. |
