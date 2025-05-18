@@ -272,18 +272,22 @@ El Banco Andino, una entidad líder en Sudamérica, enfrentaba un aumento del **
 ## RapidMiner  
 ### Descripción General  
 Destaca por su AutoML y usabilidad intuitiva, ideal para automatizar procesos como análisis de clientes o predicción de ventas. Sin embargo, su costo en licencias puede ser elevado para PYMES. Es una opción sólida para empresas con presupuesto que priorizan la velocidad en modelado sin programación
-- **Limitaciones**:  
-  - Costo elevado para PYMES.  
 
----
 
-### Fortalezas  
-1. **Ciclo de vida completo**:  
-   - Cubre desde ETL hasta despliegue.  
-2. **Integración empresarial**:  
-   - Compatible con SAP, Tableau y Oracle.  
-3. **Usabilidad**:  
-   - Interfaz gráfica para usuarios no técnicos.  
+### Fortalezas  y Limitaciones
+
+#### Fortalezas:  
+
+-   **Automatización (AutoML):** Incluye funciones para automatizar selección de modelos, ajuste de hiperparámetros y preprocesamiento.
+-   **Ciclo de vida completo:** Cubre todo el flujo de trabajo (desde ETL hasta despliegue de modelos).
+-   **Integración empresarial:** Soporta conexión con SAP, Tableau, Salesforce, y bases de datos empresariales (Oracle, SQL Server).
+-   **Usabilidad para no programadores:** Interfaz gráfica muy intuitiva para usuarios de negocio.
+
+  
+#### Limitaciones:  
+-   Licencia costosa para funcionalidades avanzadas.
+-   Menos flexible en personalización comparado con KNIME.
+
 
 ---
 
@@ -297,12 +301,70 @@ Destaca por su AutoML y usabilidad intuitiva, ideal para automatizar procesos co
 | **Cleveland Clinic**             | Salud               | Diagnóstico asistido por IA         | 92% de precisión en diagnóstico de cáncer de pulmón con imágenes médicas. |
 
 ---
+### 🏦 **Caso de Éxito: EuroBank (Europa)**  
+#### **Optimización de Scoring Crediticio con RapidMiner**
 
-# Conclusiones  
-- **WEKA**: Ideal para educación y prototipado rápido.  
-- **KNIME**: Potencia flujos complejos en entornos empresariales.  
-- **Orange**: Excelente para exploración visual y proyectos pequeños.  
-- **RapidMiner**: Solución integral para empresas con presupuesto.  
+##### **Contexto del Problema**  
+-   EuroBank, un banco líder en la UE, enfrentaba desafíos en su modelo de scoring crediticio tradicional:
+-   Altos falsos positivos: 30% de clientes solventes rechazados injustamente.
+-   Procesos lentos: Tiempo promedio de aprobación de créditos: 72 horas.
+Datos fragmentados: Información en silos (transacciones, redes sociales, CRM).
+- **Objetivo**
+    -   Reducir la morosidad del 7% al 4.5% y mejorar la experiencia del cliente mediante un scoring predictivo ágil y preciso.
+
+---
+
+##### **Solución Implementada con RapidMiner**  
+###### 1. **Integración de Datos**  
+- **Fuentes**:  
+    - **Transacciones bancarias:** 2M de registros mensuales (montos, frecuencia, ubicación).
+    - **CRM:** Historial de interacciones (quejas, productos contratados).
+    - **Datos externos:** Actividad en redes sociales (solo para clientes con consentimiento).n)
+  
+-   **Preprocesamiento**
+    - Limpieza con operadores de RapidMiner: Replace Missing Values, Normalize.
+    - Creación de variables derivadas (ej.: "gasto promedio mensual/ingreso").
+
+
+###### 2. **Modelado Predictivo**  
+| **Algoritmo**               | **Precisión** | **Recall** | **AUC-ROC** |  
+|-----------------------------|---------------|------------|-------------|  
+| **Regresión Logística**     | 82%           | 75%        | 0.84        |  
+| **Gradient Boosted Trees**  | **94%**       | **91%**    | **0.96**    | 
+
+
+-   **Técnicas avanzadas:**
+    -   **AutoML:** Optimización automática de hiperparámetros en RapidMiner.
+    -   **SMOTE:** Balanceo de clases para el 5% de casos de morosidad.
+
+
+###### 3. **Despliegue en Producción**  
+-   **Integración:**
+    -   Exportación del modelo a PMML para ejecución en sistemas core del banco.
+    -   Conexión con APIs REST para análisis en tiempo real.
+-   **Monitoreo:**
+    -   Actualización semiautomática del modelo cada 2 semanas.
+    -   Alertas en Tableau para clientes con riesgo > 80%.
+
+#### 📊 **Resultados Clave**  
+| **Métrica**                | **Antes** | **Después** | **Mejora** |  
+|----------------------------|-----------|-------------|------------|  
+| Tasa de morosidad          | 7%       | 4.3%        | -38.5%     |  
+| Tiempo de aprobación       | 72 horas | 8 horas     | -89%       |  
+| Falsos positivos           | 30%      | 12%         | -60%       |  
+| Ahorro anual               | —        | €14M        | —          |  
+
+
+**Impacto adicional**:  
+-   Aumento del 22% en aprobación de créditos a PYMES.
+-   NPS (Net Promoter Score) incrementado de 45 a 68 puntos. 
+
+
+---
+
+
+
+
 
 *Documento generado por Ivonne Rodríguez*  
 
