@@ -8,6 +8,7 @@
 - [KNIME](#knime)  
 - [Orange](#orange)  
 - [RapidMiner](#rapidminer)  
+- [Cuadro Comparativo](#CuadroComparativo)  
 
 ---
 
@@ -359,8 +360,19 @@ Datos fragmentados: Información en silos (transacciones, redes sociales, CRM).
 -   Aumento del 22% en aprobación de créditos a PYMES.
 -   NPS (Net Promoter Score) incrementado de 45 a 68 puntos. 
 
-
 ---
+## CuadroComparativo
+| **Parámetro**           | **Weka**                          | **KNIME**                          | **Orange**                          | **RapidMiner**                      |
+|-------------------------|-----------------------------------|------------------------------------|-------------------------------------|-------------------------------------|
+| **Capacidades Técnicas**| Algoritmos clásicos de ML (clasificación, clustering), integración con Java/Python. | Flujos modulares, integración con Big Data (Spark, Hadoop), Python/R. | Visualización interactiva, análisis exploratorio, integración con Python. | AutoML, procesamiento de texto/imágenes, integración con bases de datos empresariales. |
+| **Usabilidad**          | Interfaz GUI básica, ideal para académicos. Requiere conocimientos técnicos. | Interfaz visual intuitiva (drag-and-drop). Ideal para usuarios técnicos y no técnicos. | Interfaz visual muy amigable (widgets). Ideal para no programadores. | Interfaz drag-and-drop intuitiva. Curva de aprendizaje baja para AutoML. |
+| **Rendimiento**         | Limitado en Big Data. Ideal para datasets pequeños/medianos. | Escalable con extensiones (Spark). Bueno para Big Data. | Limitado a datasets medianos. Enfocado en visualización. | Alto rendimiento con optimización de modelos. Bueno para Big Data con integración en la nube. |
+| **Costo**               | Gratuito (open-source).           | Gratuito (open-source). Versión Enterprise con soporte premium. | Gratuito (open-source).           | Freemium (versión gratuita limitada). Planes desde $5,000/año. |
+| **Soporte y Comunidad** | Comunidad académica fuerte. Documentación técnica. | Comunidad activa y soporte empresarial. Foros y cursos certificados. | Comunidad pequeña pero dedicada. Menos documentación. | Soporte premium (pago). Comunidad empresarial activa. |
+| **Seguridad**           | Básica (depende de la implementación del usuario). | Opciones de seguridad empresarial (LDAP, SSO). | Limitada. Requiere configuración externa. | Alta (encriptación, compliance GDPR, auditorías). |
+| **Mejor Caso de Uso**   | Educación, investigación, prototipado rápido de modelos clásicos. | Ingeniería de datos, ETL, flujos complejos con integración de múltiples fuentes. | Análisis exploratorio, visualización interactiva, proyectos de ciencia de datos visual. | Automatización de ML en entornos empresariales (marketing, finanzas). |
+| **Aplicación en Bancos**| Modelado de riesgo crediticio básico, estudios académicos. | Detección de fraude, scoring crediticio, integración con SAP/Oracle. | Segmentación de clientes, análisis de comportamiento. | Gestión de riesgo, optimización de carteras, cumplimiento regulatorio. |
+
 
 
 
