@@ -127,6 +127,82 @@ Herramienta académica por excelencia, gratuita y sencilla para principiantes en
 | **Commerzbank (Banca)**              | Finanzas            | Gestión de riesgo crediticio         | Sistema de scoring crediticio con KNIME y SAP, mejorando precisión en 20%. |
 | **Hospital Universitario Charité (Alemania)** | Salud       | Predicción de readmisiones           | Modelos predictivos para reducir readmisiones hospitalarias en 18%. |
 
+## 🏦 **Caso de Éxito: Commerzbank**  
+### **Gestión de Riesgo Crediticio con KNIME**
+
+#### 📉 **Contexto del Problema**  
+Commerzbank, uno de los mayores bancos de Alemania, enfrentaba desafíos en su sistema de evaluación de créditos:  
+- **Baja precisión**: El 25% de los préstamos aprobados entraban en morosidad.  
+- **Procesos manuales**: Dependencia de hojas de Excel y criterios subjetivos.  
+- **Integración limitada**: Datos críticos almacenados en silos (SAP, CRM, Excel).  
+
+---
+
+### 🛠️ **Solución Implementada con KNIME**  
+#### 1. **Integración de Datos**  
+- **Fuentes**:  
+  - **SAP HANA**: Historial crediticio de 500,000 clientes (últimos 5 años).  
+  - **Excel**: Variables socioeconómicas (ingresos, empleo, deudas).  
+  - **CRM**: Interacciones con el cliente (quejas, consultas).  
+- **Flujo KNIME**:  
+  - Nodo **SAP Connector** para extraer datos en tiempo real.  
+  - Nodo **Excel Reader** para cargar archivos locales.  
+  - Unificación de datasets mediante **Joiner**.  
+
+#### 2. **Preprocesamiento y Feature Engineering**  
+- **Limpieza**:  
+  - Imputación de valores faltantes con **KNN Imputer**.  
+  - Normalización de ingresos y deudas.  
+- **Selección de características**:  
+  - **Chi-square Filter** para identificar variables clave (ej.: ratio deuda/ingreso, antigüedad laboral).  
+
+#### 3. **Modelado Predictivo**  
+| **Algoritmo**       | **Precisión** | **Recall** | **Ventaja**                          |  
+|----------------------|---------------|------------|---------------------------------------|  
+| **Random Forest**    | 88%           | 85%        | Manejo de relaciones no lineales.     |  
+| **XGBoost**          | **91%**       | **89%**    | Optimización automática de hiperparámetros. |  
+
+- **Validación**:  
+  - **Stratified Cross-Validation** (5 folds).  
+  - Métrica clave: **AUC-ROC** (0.93 para XGBoost).  
+
+#### 4. **Despliegue y Automatización**  
+- **Integración con SAP HANA**:  
+  - Exportación del modelo XGBoost a **PMML**.  
+  - Ejecución de predicciones en tiempo real via **REST API**.  
+- **Monitoreo**:  
+  - Actualización semanal del modelo con nuevos datos.  
+  - Alertas automáticas para clientes de alto riesgo.  
+
+---
+
+### 📊 **Impacto y Resultados**  
+- **Precisión mejorada**: Reducción del 20% en préstamos riesgosos aprobados.  
+- **Eficiencia operativa**:  
+  - 50% menos tiempo en aprobación de créditos (de 48h a 24h).  
+  - 15% menos morosidad en 12 meses.  
+- **Ahorro estimado**: €8M anuales por reducción de impagos.  
+- **Satisfacción del cliente**: NPS aumentó 12 puntos por decisiones más transparentes.  
+
+---
+
+### 🧠 **Lecciones Aprendidas**  
+1. **Integración multiplataforma**: KNIME permitió unificar SAP, Excel y CRM sin costosos desarrollos.  
+2. **Interpretabilidad**: Los árboles de XGBoost fueron clave para justificar decisiones ante reguladores.  
+3. **Colaboración**: Equipos de TI, riesgo y atención al cliente trabajaron en flujos compartidos de KNIME.  
+
+---
+
+### 🔄 **Flujo de Trabajo en KNIME**  
+```mermaid
+graph TD
+A[Datos SAP] --> B{Preprocesamiento en KNIME}
+C[Datos Excel] --> B
+D[Datos CRM] --> B
+B --> E[Feature Engineering]
+E --> F[Modelado: XGBoost]
+F --> G[Despliegue en SAP vía PMML]
+G --> H[Monitoreo y Reentrenamiento]
 ---
 
 ## Orange  
