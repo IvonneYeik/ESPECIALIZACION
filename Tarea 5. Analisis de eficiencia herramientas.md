@@ -100,28 +100,38 @@ La entidad bancaria enfrentaba un aumento del **fraude en transacciones con tarj
 
 ## KNIME  
 ### Descripción General  
-Herramienta visual gratuita con enfoque empresarial:  
-- Integra Python, R, Java, *Spark*, Hadoop y APIs.  
-- **Fortalezas**:  
-  - Pipelines modulares para flujos personalizados.  
-  - Escalable con *Big Data*.  
+Herramienta académica por excelencia, gratuita y sencilla para principiantes en minería de datos. Ofrece algoritmos clásicos de ML (clasificación, clustering) pero carece de soporte para Big Data o deep learning. Perfecta para prototipado rápido en educación o proyectos pequeños, pero limitada en entornos industriales.
 
----
+### Fortalezas y Limitaciones
 
-### Casos de Uso  
-| Organización       | Tipo de Analítica               | Resultados                           |  
-|--------------------|---------------------------------|--------------------------------------|  
-| Bayer              | Integración de datos + predictiva | - Reducción de tiempo de análisis de **semanas a días**.<br>- Optimización en descubrimiento de fármacos. |  
-| Commerzbank        | Scoring crediticio              | - **15% más precisión** en predicción de impagos. |  
-| Santander          | Segmentación de clientes        | - *Clustering* con *k-means* para perfiles de inversión. |  
-| BBVA               | Regulación (AML/CFT)            | - Detección de patrones sospechosos en lavado de dinero. |  
+#### Fortalezas:
+
+-   **Integración de tecnologías:** Conecta Python, R, Java, SQL, Spark, Hadoop, y hasta servicios web (APIs).
+-   **Flujos de trabajo complejos:** Su enfoque modular (nodos) permite diseñar pipelines de análisis personalizados y reutilizables.
+-   **Big Data:** Escala bien con datasets grandes gracias a integración con herramientas como Apache Spark.
+-   **Usos empresariales:** Ideal para proyectos de ciencia de datos en empresas (ej: ETL, automatización de reportes).
+
+
+### Limitaciones:
+-   Curva de aprendizaje para flujos complejos.
+-   Requiere más recursos computacionales.
+
+### Casos de Exito
+
+| **Empresa/Organización**                   | **Sector**          | **Tipo de Analítica**                | **Caso de Éxito**                                                                 |
+|--------------------------------------------|---------------------|--------------------------------------|-----------------------------------------------------------------------------------|
+| **Universidad de Liubliana (Eslovenia)**   | Educación           | Análisis de rendimiento estudiantil | Uso de Orange para identificar patrones de abandono universitario mediante clustering y árboles de decisión. Redujeron la deserción en un 18%. |
+| **Instituto Fraunhofer (Alemania)**        | Agricultura         | Detección de estrés en cultivos     | Modelos con imágenes hiperespectrales en Orange para predecir estrés hídrico en viñedos (+30% eficiencia en riego). |
+| **Clínica Cleveland (EE. UU.)**            | Salud               | Diagnóstico de enfermedades cardíacas | Clasificación de pacientes con riesgo de infarto (87% precisión usando redes neuronales). |
+| **RetailCo (España)**                      | Retail              | Segmentación de clientes            | Campañas personalizadas con heatmaps y k-means en Orange, aumentando ventas en 22%. |
+| **Centro de Investigación en Genómica (California)** | Biotecnología | Análisis de expresión génica        | Identificación de marcadores genéticos de cáncer de mama, acelerando investigaciones en 40%. |
+
 
 ---
 
 ## Orange  
 ### Descripción General  
-Herramienta visual para exploración de datos:  
-- Widgets interactivos (*heatmaps*, diagramas 3D).  
+Herramienta visual y gratuita, enfocada en exploración de datos y docencia. Sus widgets interactivos simplifican tareas como clustering o visualización, pero carece de capacidad para modelos avanzados o datos masivos. Recomendada para educación, análisis preliminares o PYMES sin requerimientos técnicos complejos.
 - **Limitaciones**:  
   - No soporta modelos avanzados ni datos masivos.  
   - Recomendada para PYMES y educación.  
@@ -149,8 +159,7 @@ Herramienta visual para exploración de datos:
 
 ## RapidMiner  
 ### Descripción General  
-Herramienta empresarial con *AutoML*:  
-- Automatiza selección de modelos y ajuste de hiperparámetros.  
+Destaca por su AutoML y usabilidad intuitiva, ideal para automatizar procesos como análisis de clientes o predicción de ventas. Sin embargo, su costo en licencias puede ser elevado para PYMES. Es una opción sólida para empresas con presupuesto que priorizan la velocidad en modelado sin programación
 - **Limitaciones**:  
   - Costo elevado para PYMES.  
 
