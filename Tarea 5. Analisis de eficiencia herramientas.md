@@ -189,22 +189,22 @@ Commerzbank, uno de los mayores bancos de Alemania, enfrentaba desafíos en su s
 ## Orange  
 ### Descripción General  
 Herramienta visual y gratuita, enfocada en exploración de datos y docencia. Sus widgets interactivos simplifican tareas como clustering o visualización, pero carece de capacidad para modelos avanzados o datos masivos. Recomendada para educación, análisis preliminares o PYMES sin requerimientos técnicos complejos.
-- **Limitaciones**:  
-  - No soporta modelos avanzados ni datos masivos.  
-  - Recomendada para PYMES y educación.  
+
+
+### Fortalezas y Limitaciones
+
+#### Fortalezas:
+
+-   **Visualización interactiva:** Sus widgets gráficos permiten explorar datos de manera intuitiva (ej: heatmaps, diagramas de dispersión 3D).
+-   **Storytelling con datos:** Facilita la creación de narrativas visuales para presentar resultados a no técnicos.
+-   **Análisis exploratorio:** Perfecto para entender distribuciones, correlaciones o patrones iniciales en datasets pequeños/medianos.
+-   **Educación:** Muy usado en cursos introductorios por su interfaz amigable (drag-and-drop).
+
+#### Limitaciones
+-   Menos potente para flujos de trabajo avanzados.
+-   Limitado en integración con entornos de programación.
 
 ---
-
-### Fortalezas  
-1. **Visualización interactiva**:  
-   - Ideal para *storytelling* con datos.  
-2. **Análisis exploratorio**:  
-   - Identificación de correlaciones y patrones.  
-3. **Educación**:  
-   - Interfaz *drag-and-drop* para cursos introductorios.  
-
----
-
 
 ### Casos de Exito
 
