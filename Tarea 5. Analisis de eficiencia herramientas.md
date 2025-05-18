@@ -116,16 +116,13 @@ Herramienta académica por excelencia, gratuita y sencilla para principiantes en
 -   Curva de aprendizaje para flujos complejos.
 -   Requiere más recursos computacionales.
 
-### Casos de Exito
-
-| **Empresa/Organización**                   | **Sector**          | **Tipo de Analítica**                | **Caso de Éxito**                                                                 |
-|--------------------------------------------|---------------------|--------------------------------------|-----------------------------------------------------------------------------------|
-| **Universidad de Liubliana (Eslovenia)**   | Educación           | Análisis de rendimiento estudiantil | Uso de Orange para identificar patrones de abandono universitario mediante clustering y árboles de decisión. Redujeron la deserción en un 18%. |
-| **Instituto Fraunhofer (Alemania)**        | Agricultura         | Detección de estrés en cultivos     | Modelos con imágenes hiperespectrales en Orange para predecir estrés hídrico en viñedos (+30% eficiencia en riego). |
-| **Clínica Cleveland (EE. UU.)**            | Salud               | Diagnóstico de enfermedades cardíacas | Clasificación de pacientes con riesgo de infarto (87% precisión usando redes neuronales). |
-| **RetailCo (España)**                      | Retail              | Segmentación de clientes            | Campañas personalizadas con heatmaps y k-means en Orange, aumentando ventas en 22%. |
-| **Centro de Investigación en Genómica (California)** | Biotecnología | Análisis de expresión génica        | Identificación de marcadores genéticos de cáncer de mama, acelerando investigaciones en 40%. |
-
+| **Empresa/Organización**             | **Sector**          | **Tipo de Analítica**                | **Caso de Éxito**                                                                 |
+|--------------------------------------|---------------------|--------------------------------------|-----------------------------------------------------------------------------------|
+| **Roche (Farmacéutica)**             | Salud               | Descubrimiento de biomarcadores      | Automatización de análisis genómicos con KNIME, reduciendo tiempo de investigación en 50%. |
+| **BMW Group (Automotriz)**           | Manufactura         | Mantenimiento predictivo             | Predicción de fallos en motores, evitando 15,000 horas de inactividad anuales. |
+| **DHL (Logística)**                  | Transporte          | Optimización de rutas                | Reducción del 12% en costos de combustible mediante análisis geoespacial. |
+| **Commerzbank (Banca)**              | Finanzas            | Gestión de riesgo crediticio         | Sistema de scoring crediticio con KNIME y SAP, mejorando precisión en 20%. |
+| **Hospital Universitario Charité (Alemania)** | Salud       | Predicción de readmisiones           | Modelos predictivos para reducir readmisiones hospitalarias en 18%. |
 
 ---
 
@@ -148,12 +145,16 @@ Herramienta visual y gratuita, enfocada en exploración de datos y docencia. Sus
 
 ---
 
-### Casos de Uso  
-| Organización       | Tipo de Analítica       | Resultados                           |  
-|--------------------|-------------------------|--------------------------------------|  
-| BBC                | Exploratoria            | - **20% más retención** de audiencia.<br>- Segmentación con *heatmaps*. |  
-| Crédit Agricole    | Visualización           | - Análisis de riesgo macroeconómico. |  
-| Fintechs           | Clustering              | - Agrupación de usuarios para productos personalizados. |  
+
+### Casos de Exito
+
+| **Empresa/Organización**                   | **Sector**          | **Tipo de Analítica**                | **Caso de Éxito**                                                                 |
+|--------------------------------------------|---------------------|--------------------------------------|-----------------------------------------------------------------------------------|
+| **Universidad de Liubliana (Eslovenia)**   | Educación           | Análisis de rendimiento estudiantil | Uso de Orange para identificar patrones de abandono universitario mediante clustering y árboles de decisión. Redujeron la deserción en un 18%. |
+| **Instituto Fraunhofer (Alemania)**        | Agricultura         | Detección de estrés en cultivos     | Modelos con imágenes hiperespectrales en Orange para predecir estrés hídrico en viñedos (+30% eficiencia en riego). |
+| **Clínica Cleveland (EE. UU.)**            | Salud               | Diagnóstico de enfermedades cardíacas | Clasificación de pacientes con riesgo de infarto (87% precisión usando redes neuronales). |
+| **RetailCo (España)**                      | Retail              | Segmentación de clientes            | Campañas personalizadas con heatmaps y k-means en Orange, aumentando ventas en 22%. |
+| **Centro de Investigación en Genómica (California)** | Biotecnología | Análisis de expresión génica        | Identificación de marcadores genéticos de cáncer de mama, acelerando investigaciones en 40%. |
 
 ---
 
@@ -175,12 +176,14 @@ Destaca por su AutoML y usabilidad intuitiva, ideal para automatizar procesos co
 
 ---
 
-### Casos de Uso  
-| Organización       | Tipo de Analítica       | Resultados                           |  
-|--------------------|-------------------------|--------------------------------------|  
-| Ford               | Predictiva (mantenimiento) | - **30% menos costos** de mantenimiento.<br>- Algoritmos: Redes Neuronales, SVM. |  
-| American Express   | Detección de fraude     | - **25% menos falsos positivos**.<br>- Modelos de *Deep Learning*. |  
-| HSBC               | Optimización de carteras| - Algoritmos genéticos para maximizar rendimientos. |  
+### Casos de Exito  
+| **Empresa/Organización**         | **Sector**          | **Tipo de Analítica**               | **Caso de Éxito**                                                                 |
+|----------------------------------|---------------------|-------------------------------------|-----------------------------------------------------------------------------------|
+| **Siemens Energy**               | Energía             | Mantenimiento predictivo            | Reducción del 25% en tiempo de inactividad de turbinas mediante modelos predictivos. |
+| **Allianz**                      | Seguros             | Detección de fraude                 | Mejora del 35% en precisión antifraude, ahorrando €5M anuales. |
+| **Vodafone**                     | Telecomunicaciones  | Reducción de abandono de clientes   | Aumento del 20% en retención con campañas personalizadas basadas en churn. |
+| **Otto Group**                   | Retail              | Optimización de inventario          | Reducción del 30% en exceso de stock usando predicción de demanda. |
+| **Cleveland Clinic**             | Salud               | Diagnóstico asistido por IA         | 92% de precisión en diagnóstico de cáncer de pulmón con imágenes médicas. |
 
 ---
 
