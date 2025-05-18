@@ -217,34 +217,46 @@ Herramienta visual y gratuita, enfocada en exploración de datos y docencia. Sus
 | **Centro de Investigación en Genómica (California)** | Biotecnología | Análisis de expresión génica        | Identificación de marcadores genéticos de cáncer de mama, acelerando investigaciones en 40%. |
 
 ---
+### 🏦 **Caso de Éxito: Banco Andino (Latinoamérica)**  
+#### **Segmentación de Clientes y Reducción de Morosidad con Orange **
 
+##### **Contexto del Problema**  
+El Banco Andino, una entidad líder en Sudamérica, enfrentaba un aumento del **25% en la morosidad de créditos personales** en 2021. Sus métodos tradicionales de evaluación (puntajes crediticios estáticos) no capturaban patrones complejos de comportamiento
 
-
---------------
-### 🛠️ **Solución Implementada con Orange**  
-#### 1. **Integración y Visualización de Datos**  
-- **Fuentes**:  
-  - **CRM**: 200,000 registros de clientes (edad, ingresos, productos contratados).  
-  - **SAP**: Historial de pagos últimos 3 años.  
-  - **Excel**: Variables macroeconómicas (desempleo regional, inflación).  
-- **Flujo en Orange**:  
-  - Widget `File` para cargar datos desde CSV y Excel.  
-  - Widget `Merge Data` para unir tablas por ID de cliente.  
-  - Widget `Correlation Matrix` para identificar relaciones clave (ej.: ingresos vs. morosidad).  
-
-#### 2. **Segmentación con Machine Learning**  
-- **Técnicas**:  
-  - **Clustering (k-means)**: Agrupó clientes en 5 perfiles de riesgo.  
-  - **Clasificación (Random Forest)**: Predijo morosidad con 89% de precisión (AUC: 0.91).  
-
-#### 3. **Visualización Interactiva**  
-- **Herramientas**:  
-  - Widget `Scatter Plot`: Correlación entre edad y morosidad.  
-  - Widget `Box Plot`: Comparación de ingresos por segmento.  
+- **Retos clave**
+-   35% de clientes "bomba de tiempo" (bajo puntaje pero buen historial reciente).
+-   Datos fragmentados en 3 sistemas (CRM, SAP, Excel).
+-   Falta de visualización interactiva para equipos no técnicos
 
 ---
 
-### 📊 **Resultados Clave**  
+##### **Solución Implementada con Orange**  
+###### 1. **Integración y Visualización de Datos**  
+- **Fuentes**:  
+  - **CRM:** 200,000 registros de clientes (edad, ingresos, productos contratados).
+-   **SAP:** Historial de pagos últimos 3 años.
+-   **Excel:** Variables macroeconómicas (desempleo regional, inflación)
+  
+-   **Flujo en Orange**
+-   Widget **File** para cargar datos desde CSV y Excel.
+-   Widget **Merge Data** para unir tablas por ID de cliente.
+-   Widget **Correlation Matrix** para identificar relaciones clave (ej.: ingresos vs. morosidad).
+
+###### 2. **Segmentación con Machine Learning**  
+- **Técnicas**: 
+    - **Clustering (k-means):** Agrupó clientes en 5 perfiles de riesgo usando variables como:
+        - Frecuencia de pagos atrasados.
+        - Ratio deuda/ingresos.
+        - Uso de canales digitales.
+    - **Clasificación (Random Forest):** Predijo probabilidad de mora con un 89% de precisión (AUC: 0.91).
+
+###### 3. **Visualización Interactiva**  
+-   **Herramientas:**
+    -    Widget **Scatter Plot:** Mostró correlación entre edad y morosidad.
+    -    Widget **Box Plot:** Comparó ingresos por segmento de riesgo.
+    -    Widget **Predictions:** Exportó resultados a Excel para el equipo comercial.
+
+#### 📊 **Resultados Clave**  
 | **Métrica**                | **Antes de Orange** | **Después de Orange** |  
 |----------------------------|---------------------|-----------------------|  
 | Tasa de morosidad          | 8.5%               | 6.1% (-28%)           |  
@@ -254,6 +266,7 @@ Herramienta visual y gratuita, enfocada en exploración de datos y docencia. Sus
 **Impacto adicional**:  
 - Reducción del 18% en fuga de clientes.  
 - Ahorro anual de **$2.7M**.  
+
 ---
 
 ## RapidMiner  
