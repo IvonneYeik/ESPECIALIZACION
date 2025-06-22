@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos Banco Agrario de Colombia | Especialización en Analítica de Datos</title>
+    <style>
+        :root {
+            --primary: #2c5f2d;
+            --secondary: #97bc62;
+            --accent: #cec547;
+            --light: #f5f5f5;
+            --dark: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f7f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        nav {
+            background-color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .sql-code {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .sql-keyword {
+            color: #f92672;
+        }
+        
+        .sql-function {
+            color: #66d9ef;
+        }
+        
+        .sql-string {
+            color: #e6db74;
+        }
+        
+        .sql-comment {
+            color: #75715e;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: white;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .table-container {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .table-title {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .highlight {
+            background-color: rgba(206, 197, 71, 0.2);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .conclusion-item {
+            background-color: #f0f7f0;
+            padding: 1rem;
+            border-left: 4px solid var(--primary);
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        .author {
+            font-style: italic;
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-circle">BAC</div>
+            <div class="logo-text">Banco <span>Agrario</span></div>
+        </div>
+        <h1>Sistema de Base de Datos para Gestión Crediticia</h1>
+        <p>Especialización en Analítica de Datos</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#contexto" class="active">Contexto</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#base-datos">Base de Datos</a></li>
+            <li><a href="#analisis">Análisis</a></li>
+            <li><a href="#conclusiones">Conclusiones</a></li>
+            <li><a href="#bibliografia">Bibliografía</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="contexto" class="section">
+            <h2 class="section-title"><i class="fas fa-building"></i> Contextualización del Banco Agrario de Colombia</h2>
+            <p>El Banco Agrario de Colombia (BAC) fue fundado en 1999 como sucesor de la extinta Caja Agraria. Su misión principal es brindar servicios financieros en las zonas rurales del país, con un enfoque en la inclusión financiera, el desarrollo agrícola y la equidad territorial.</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">Misión</div>
+                    <div class="card-body">
+                        <p>Facilitar el acceso al crédito a pequeños y medianos productores, promoviendo la inclusión financiera y el desarrollo agrícola en todo el territorio colombiano.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">Cobertura</div>
+                    <div class="card-body">
+                        <p>Actualmente, el BAC es el banco con mayor presencia a nivel nacional, contando con 793 oficinas que brindan apoyo a campesinos en todas las regiones de Colombia.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">Retos</div>
+                    <div class="card-body">
+                        <p>Solo el 32% de los clientes rurales tiene acceso a internet en sus fincas, y apenas el 25% reporta tener una cuenta de correo electrónico, lo que plantea desafíos para la digitalización.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="servicios" class="section">
+            <h2 class="section-title"><i class="fas fa-hand-holding-usd"></i> Servicios Prestados por el BAC</h2>
+            
+            <h3><i class="fas fa-credit-card"></i> Crédito y Financiamiento</h3>
+            <ul>
+                <li><span class="highlight">Créditos agropecuarios</span>: Capital de trabajo, maquinaria, infraestructura, certificaciones, silvicultura, ganadería sostenible, crédito verde, jóvenes y mujeres rurales.</li>
+                <li><span class="highlight">Créditos de libre inversión</span>: Microcréditos, para empresarios, asalariados, pensionados, vivienda e hipotecarios.</li>
+                <li><span class="highlight">Libranza y refinanciación</span>: Para aliviar deuda o ajustar condiciones.</li>
+                <li><span class="highlight">Banca Microfinanzas</span>: Microcrédito y asesoría para emprendimientos urbanos y rurales.</li>
+                <li><span class="highlight">Banca Agropecuaria</span>: Asesoría integral, financiamiento para producción, transformación y comercialización.</li>
+                <li><span class="highlight">Banca Pymes</span>: Productos de ahorro, inversión y crédito adaptados.</li>
+            </ul>
+            
+            <h3><i class="fas fa-piggy-bank"></i> Ahorro e Inversión</h3>
+            <ul>
+                <li>Cuentas de ahorro: Tradicionales, activas, programadas, grupales, para bajo monto, y cuenta corriente.</li>
+                <li>Productos de inversión: CDT, CDAT, fondos colectivos y fiducia.</li>
+            </ul>
+            
+            <h3><i class="fas fa-mobile-alt"></i> Otros Servicios</h3>
+            <ul>
+                <li>Canales digitales: Banca Virtual, Billetera digital BiCo, Transfiya, Chatbot.</li>
+                <li>Atención presencial: 793 oficinas nacionales, red de cajeros automáticos y corresponsales.</li>
+                <li>Operador de programas sociales: Distribución de apoyos del DPS (Renta Ciudadana, Colombia Mayor, Devolución del IVA).</li>
+                <li>Remates judiciales.</li>
+            </ul>
+        </section>
+        
+        <section id="base-datos" class="section">
+            <h2 class="section-title"><i class="fas fa-database"></i> Base de Datos BAC_AGRARIO</h2>
+            
+            <h3>Creación de la Base de Datos</h3>
+            <div class="sql-code">
+                <span class="sql-keyword">CREATE DATABASE</span> BAC_AGRARIO;
+                <span class="sql-keyword">USE</span> BAC_AGRARIO;
+            </div>
+            
+            <h3>Modelo Entidad-Relación</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">CLIENTES</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>id_cliente : int(6)</li>
+                            <li>tipo_id : char(2)</li>
+                            <li>Numero_id : int(10)</li>
+                            <li>Nombre_Cliente : varchar(100)</li>
+                            <li>id_TipoCliente : int(6)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">TRAMITES</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>id_Tramite : int(6)</li>
+                            <li>id_cliente : int(6)</li>
+                            <li>Fecha_Tramite : date</li>
+                            <li>id_Ruta : int(6)</li>
+                            <li>Monto_Tramite : decimal(15,2)</li>
+                            <li>Estado_Tramite : varchar(10)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">RUTAS_CREDITO</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>id_Ruta : int(6)</li>
+                            <li>Nombre_Ruta : varchar(50)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Creación de Tablas</h3>
+            <div class="sql-code">
+                <span class="sql-comment">-- Tabla TIPOS_DE_CLIENTES</span><br>
+                <span class="sql-keyword">CREATE TABLE</span> TIPOS_DE_CLIENTES (<br>
+                &nbsp;&nbsp;Id_TipoCliente <span class="sql-keyword">INT</span>(6) <span class="sql-keyword">PRIMARY KEY</span>,<br>
+                &nbsp;&nbsp;Tipo_Cliente <span class="sql-keyword">VARCHAR</span>(50) <span class="sql-keyword">NOT NULL</span><br>
+                );
+                <br><br>
+                
+                <span class="sql-comment">-- Tabla CLIENTES</span><br>
+                <span class="sql-keyword">CREATE TABLE</span> CLIENTES (<br>
+                &nbsp;&nbsp;id_cliente <span class="sql-keyword">INT</span>(6) <span class="sql-keyword">PRIMARY KEY</span>,<br>
+                &nbsp;&nbsp;Tipo_id <span class="sql-keyword">CHAR</span>(2) <span class="sql-keyword">NOT NULL</span>,<br>
+                &nbsp;&nbsp;Numero_id <span class="sql-keyword">INT</span>(10) <span class="sql-keyword">NOT NULL</span>,<br>
+                &nbsp;&nbsp;Nombre_Cliente <span class="sql-keyword">VARCHAR</span>(100) <span class="sql-keyword">NOT NULL</span>,<br>
+                &nbsp;&nbsp;id_TipoCliente <span class="sql-keyword">INT</span>(6) <span class="sql-keyword">NOT NULL</span>,<br>
+                &nbsp;&nbsp;<span class="sql-keyword">FOREIGN KEY</span> (id_TipoCliente) <span class="sql-keyword">REFERENCES</span> TIPOS_DE_CLIENTES(id_TipoCliente)<br>
+                );
+            </div>
+            
+            <h3>Población de Datos</h3>
+            <div class="sql-code">
+                <span class="sql-comment">-- Insertar etapas de crédito</span><br>
+                <span class="sql-keyword">INSERT INTO</span> ETAPAS_CREDITO (Id_Etapa, Nombre_Etapa) <span class="sql-keyword">VALUES</span><br>
+                &nbsp;&nbsp;(1, <span class="sql-string">'Solicitud'</span>),<br>
+                &nbsp;&nbsp;(2, <span class="sql-string">'Validación Documental'</span>),<br>
+                &nbsp;&nbsp;(3, <span class="sql-string">'Visita Técnica'</span>),<br>
+                &nbsp;&nbsp;(4, <span class="sql-string">'Análisis de Riesgo'</span>),<br>
+                &nbsp;&nbsp;(5, <span class="sql-string">'Aprobación Comité'</span>),<br>
+                &nbsp;&nbsp;(6, <span class="sql-string">'Firma de Contrato'</span>),<br>
+                &nbsp;&nbsp;(7, <span class="sql-string">'Desembolso'</span>);
+            </div>
+        </section>
+        
+        <section id="analisis" class="section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Análisis para Mejora de Productividad</h2>
+            
+            <h3>Optimización de Tiempos de Desembolso</h3>
+            <p>El análisis identificó que la etapa de <span class="highlight">"Análisis de Riesgo"</span> era un cuello de botella que consumía hasta 4 días en el proceso de desembolso de créditos.</p>
+            
+            <h3>Solución Implementada</h3>
+            <ul>
+                <li>Integración con <span class="highlight">TransUnion</span> para consulta de scoring crediticio en línea.</li>
+                <li>Automatización del proceso de análisis de riesgo.</li>
+                <li>Actualización de la duración de la etapa a 0 días:</li>
+            </ul>
+            
+            <div class="sql-code">
+                <span class="sql-comment">-- Actualizar tiempo de análisis de riesgo</span><br>
+                <span class="sql-keyword">UPDATE</span> RUTAS_ETAPAS <span class="sql-keyword">SET</span> Tiempo_Etapa_Dias = 0 <br>
+                <span class="sql-keyword">WHERE</span> id_Etapa = 4;
+            </div>
+            
+            <h3>Resultados de la Optimización</h3>
+            <div class="comparison-table">
+                <div class="table-container">
+                    <div class="table-title">ANTES de la Optimización</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ruta de Crédito</th>
+                                <th>Tiempo (Días)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Créditos agropecuarios</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>Créditos de libre inversión</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>Libranza y refinanciación</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Banca Microfinanzas</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>Banca Agropecuaria</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>Banca Pymes</td>
+                                <td>19</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-container">
+                    <div class="table-title">DESPUÉS de la Optimización</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ruta de Crédito</th>
+                                <th>Tiempo (Días)</th>
+                                <th>Reducción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Créditos agropecuarios</td>
+                                <td>15</td>
+                                <td>4 días (21%)</td>
+                            </tr>
+                            <tr>
+                                <td>Créditos de libre inversión</td>
+                                <td>10</td>
+                                <td>1 día (9%)</td>
+                            </tr>
+                            <tr>
+                                <td>Libranza y refinanciación</td>
+                                <td>9</td>
+                                <td>1 día (10%)</td>
+                            </tr>
+                            <tr>
+                                <td>Banca Microfinanzas</td>
+                                <td>15</td>
+                                <td>4 días (21%)</td>
+                            </tr>
+                            <tr>
+                                <td>Banca Agropecuaria</td>
+                                <td>15</td>
+                                <td>4 días (21%)</td>
+                            </tr>
+                            <tr>
+                                <td>Banca Pymes</td>
+                                <td>15</td>
+                                <td>4 días (21%)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <h3>Impacto en la Experiencia del Cliente</h3>
+            <p>La reducción de hasta 4 días en el tiempo de desembolso representa una mejora significativa en la experiencia del cliente, especialmente para pequeños productores que dependen de financiamiento oportuno para sus ciclos agrícolas.</p>
+        </section>
+        
+        <section id="conclusiones" class="section">
+            <h2 class="section-title"><i class="fas fa-check-circle"></i> Conclusiones</h2>
+            
+            <div class="conclusion-item">
+                <p><i class="fas fa-database"></i> La implementación de bases de datos estructuradas en un Data Warehouse, potenciadas con modelos analíticos, facilita significativamente el análisis de información para identificar oportunidades de mejora.</p>
+            </div>
+            
+            <div class="conclusion-item">
+                <p><i class="fas fa-bolt"></i> La optimización de procesos mediante integración con servicios externos como TransUnion permite implementar soluciones internas que agilizan la evaluación y desembolso de trámites crediticios.</p>
+            </div>
+            
+            <div class="conclusion-item">
+                <p><i class="fas fa-chart-line"></i> La reducción de hasta 4 días en tiempos de desembolso impacta directamente en la experiencia del cliente, mejorando la satisfacción y atrayendo nuevos clientes al banco.</p>
+            </div>
+            
+            <div class="conclusion-item">
+                <p><i class="fas fa-users"></i> Mantener etapas críticas como el "Análisis de Riesgo" (aunque automatizada) es fundamental para la trazabilidad y evaluación integral de los créditos.</p>
+            </div>
+            
+            <div class="conclusion-item">
+                <p><i class="fas fa-mobile-alt"></i> Los desafíos de digitalización en zonas rurales (solo 32% con acceso a internet) requieren soluciones híbridas que combinen tecnología con presencia física.</p>
+            </div>
+        </section>
+        
+        <section id="bibliografia" class="section">
+            <h2 class="section-title"><i class="fas fa-book"></i> Bibliografía</h2>
+            
+            <ol>
+                <li><strong>Barzanallana, R.</strong> (2004). Sistemas de bases de datos. Informática Aplicada a la Gestión Pública. Universidad de Murcia.</li>
+                <li><strong>Cabello, M. V. N.</strong> (2010). Introducción a las bases de datos relacionales. Vision Libros.</li>
+                <li><strong>Cadavid, S. R.</strong> (2019). Relaciones y cardinalidad.</li>
+                <li><strong>Cadavid, S. R.</strong> (s. f.). Conceptos de entidades y atributos.</li>
+                <li><strong>Microsoft.</strong> (2016). Conceptos básicos del diseño de una base de datos. Soporte de Microsoft.</li>
+                <li><strong>Pulido Romero, E., Escobar Domínguez, O. y Núñez Pérez, J. Á.</strong> (2019). Base de datos. Grupo Editorial Patria.</li>
+            </ol>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Especialización en Analítica de Datos | Universidad Católica de Colombia</p>
+        <p class="author">Trabajo realizado por: Ivonne Rodriguez</p>
+        <p>&copy; 2023 - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Highlight active section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
